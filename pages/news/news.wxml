@@ -1,0 +1,23 @@
+<!--pages/news/news.wxml-->
+<import src="../templates/template.wxml" />
+<!-- 轮播图 -->
+<swiper indicator-dots="true" indicator-active-color="green" current="0" circular="false" interval="{{interval}}" easing-function="easeInOutCubic" class="swiperContainer">
+  <swiper-item wx:for="{{swiperImgs}}" wx:for-item="swiperImgSrc" wx:key="uni">
+    <image src="{{baseSrc+swiperImgSrc}}"></image>
+  </swiper-item>
+</swiper>
+<!-- 列表部分 -->
+<view class="newslists">
+  <!-- <view wx:for="{{newsLists}}" wx:key="index" wx:for-item="newslist" class='newslist'>
+    <view>
+      <text class='writer'>{{newslist.writer}}</text>
+      <text class='date'>{{newslist.time}}</text>
+    </view>
+    <view class='title'>{{newslist.title}}</view>
+    <image src="{{newslist.imgUrl}}"></image>
+    <view class='brief'>{{newslist.brief}}</view>
+  </view> -->
+  <block wx:for="{{newsLists}}" wx:key="index" wx:for-item="newslist">
+    <template is="newslist" data="{{newslist,index}}"></template>
+  </block>
+</view>

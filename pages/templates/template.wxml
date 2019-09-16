@@ -1,0 +1,40 @@
+<!-- 模板定义 -->
+<!-- 新闻列表 -->
+<wxs src='../wxs/rating.wxs' module='rating'></wxs>
+<template name="newslist">
+  <view class='newslist' bindtap="onOpenNewsDetail" data-index="{{index}}">
+    <view>
+      <text class='writer'>{{newslist.author}}</text>
+      <text class='date'>{{newslist.time}}</text>
+    </view>
+    <view class='title'>{{newslist.title}}</view>
+    <image src="{{newslist.imgUrl}}"></image>
+    <view class='brief'>{{newslist.brief}}</view>
+  </view>
+</template>
+<!-- 评分模板 -->
+<template name='rating'>
+  <view class='movie-rating'>
+    <block wx:for='{{[1,2,3,4,5]}}' wx:for-item='ratingItem' wx:key='{{index}}'>
+      <image src='../../imgs/movie/star_{{rating.ratingConvert(average) >= ratingItem ? 1 : 0}}.png' class='movie-star'></image>
+    </block>
+    <text class='average'>{{average}}</text>
+  </view>
+</template>
+
+<!-- 即将上映 -->
+<template name='movie-item-temp'>
+  <view class='movie-item'>
+    <image src='{{item.images.large}}' bindtap='onOpenMovieDetail' data-movie-id="{{item.id}}" binderror="onImageError" data-index='{{index}}'></image>
+    <text class='movie-item-title'>{{item.title}}</text>
+    <template is='rating' data ='{{average:item.rating.average}}'></template>
+  </view>
+</template>
+
+<!-- loading -->
+<template name='loading'>
+  <view class='loading'>
+    <image src='../../imgs/movie/loading_ico.png'></image>
+    <text>努力加载中...</text>
+  </view>
+</template>

@@ -1,0 +1,42 @@
+<!--pages/movies/movie_detail.wxml-->
+<!-- <wxs src='../wxs/rating.wxs' module='rating'></wxs> -->
+<import src="../templates/template.wxml" />
+<view class='movie-detail-container'>
+  <view class='movie-info-container'>
+    <image src='{{movieDetail.images.large}}' class='movie-cover' bindtap='onPreviewImage' data-img-url='{{movieDetail.images.large}}'></image>
+    <view class='movie-info'>
+      <text class='movie-title'>{{movieDetail.original_title}}</text>
+      <text class='movie-inTheater'>{{movieDetail.countries}}/{{movieDetail.genres}}/{{movieDetail.year}}年上映</text>
+      <!-- <view class='movie-rating'>
+        <block wx:for='{{[1,2,3,4,5]}}'>
+          <image src='../../imgs/movie/star_{{rating.ratingConvert(movieDetail.rating.average) >= item ? 1 : 0}}.png' ></image>
+        </block>
+        <text>{{movieDetail.rating.average}}</text>
+      </view> -->
+      <template is='rating' data='{{average:movieDetail.rating.average}}'></template>
+      <view class='movie-comment'>
+        <view>
+            <image src='../../imgs/movie/wish.png'></image>
+            <text>{{movieDetail.wish_count}}</text>
+        </view>
+        <view>
+            <image src='../../imgs/movie/comments.png'></image>
+            <text>{{movieDetail.comments_count}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='movie-brief-container'>
+    <view class='title'>电影简介</view>
+    <text class='brief'>{{movieDetail.summary}}</text>
+  </view>
+  <view class='movie-avatars-container'>
+    <text class='title'>演员信息</text>
+    <view class='movie-avatars'>
+      <view class='movie-avatar' wx:for='{{movieDetail.casts}}' wx:for-item='cast' wx:key='{{index}}'>
+        <image src='{{cast.avatars.large}}' bindtap='onPreviewImage' data-img-url='{{cast.avatars.large}}'></image>
+        <text>{{cast.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

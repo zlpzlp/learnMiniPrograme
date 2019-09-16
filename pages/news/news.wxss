@@ -1,0 +1,9 @@
+/* pages/news/news.wxss */
+@import "../templates/template.wxss";
+.swiperContainer image{
+  width: 100%;
+  height: 100%;
+}
+page{
+  background: #eee;
+}

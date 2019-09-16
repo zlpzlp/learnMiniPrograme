@@ -1,0 +1,14 @@
+<!--pages/detail/detail.wxml-->
+<view class='detail'>
+<!-- 小程序中背景路径图不允许写在样式表中？-->
+  <view class='pic' style='background-image:url("{{newsDetail.imgUrl}}");'>
+    <button class='share' bindtap='onshare' open-type='share'>分享</button>
+  </view>
+  <view class='author-info'>
+    <image class="avatar" src="https://www.picovr.com/global/imgs/header/userPhoto_default.png"></image>
+    <text class="author">{{newsDetail.author}}</text>
+    <text class="date">发表于 {{newsDetail.time}}</text>
+  </view>
+  <view class='title'>{{newsDetail.title}}</view>
+  <view class='content'>{{newsDetail.content}}</view>
+</view>

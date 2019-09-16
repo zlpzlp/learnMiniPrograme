@@ -1,0 +1,47 @@
+/* pages/detail/detail.wxss */
+.detail .pic{
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  position: relative;
+}
+.detail .share{
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius:100%; 
+  background: rgba(255, 255, 255, .5);
+  font-size: 10px;
+  line-height: 50rpx;
+  text-align: center;
+}
+.detail .author-info{
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.detail .author-info .avatar{
+  width: 30px;
+  height: 30px;
+  margin-right: 10rpx;
+}
+.detail .author-info .author{
+  font-size: 14px;
+  margin-right: 10rpx;
+}
+.detail .author-info .date{
+  color: #aaa;
+  font-size: 12px;
+}
+.detail .title{
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.detail .content{
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}

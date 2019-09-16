@@ -1,0 +1,70 @@
+/* pages/movies/movie_detial.wxss */
+@import "../templates/template.wxss";
+.movie-detail-container{
+  padding:0 20rpx 40rpx;
+  background: #eee;
+  font-size: 14px;
+  height: 100%;
+  min-height: 100%;
+}
+/* 电影相关信息部分 */
+.movie-info-container{
+  display: flex;
+  flex-direction: row;
+}
+.movie-cover{
+  width: 210rpx;
+  height: 300rpx;
+}
+.movie-info{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 20rpx;
+}
+.movie-info image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.movie-info .movie-title{
+  font-size: 14px;
+}
+.movie-info .movie-inTheater{
+  font-size: 12px;
+  color: #aaa;
+}
+.movie-comment{
+  display: flex;
+  flex-direction: row;
+}
+.movie-comment view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10rpx;
+}
+.movie-comment text{
+  font-size: 12px;
+  color: #aaa;
+  margin-left: 5rpx;
+}
+.movie-brief-container{
+  margin: 30rpx 0;
+}
+.movie-brief-container .brief{
+  font-size: 14px;
+}
+.movie-avatars{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+.movie-avatars image{
+  width: 230rpx;
+  height: 300rpx;
+}
+.movie-avatars  .movie-avatar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

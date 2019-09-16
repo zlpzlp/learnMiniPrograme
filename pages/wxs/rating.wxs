@@ -1,0 +1,6 @@
+var ratingConvert = function(ratingAverage){
+  return Number(ratingAverage/2).toFixed(1);
+}
+module.exports = {
+  ratingConvert:ratingConvert
+}
